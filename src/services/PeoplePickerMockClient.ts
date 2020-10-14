@@ -39,6 +39,16 @@ export const MockUsers : IPeoplePickerUserItem[] = [{
     tertiaryText: "",
     optionalText: "",
     loginName: "juanmartin@tennis.onmicrosoft.com"
+  },
+  {
+    id: "10dfa208-d7d4-4aef-a7ea-f9e4bb1b85c5",
+    imageUrl: "",
+    imageInitials: "RT",
+    text: "Roger Taylor",
+    secondaryText: "rtaylor@tennis.onmicrosoft.com",
+    tertiaryText: "",
+    optionalText: "",
+    loginName: "rtaylor@tennis.onmicrosoft.com"
   }
 ];
 
