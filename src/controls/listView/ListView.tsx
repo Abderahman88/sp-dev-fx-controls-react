@@ -582,7 +582,7 @@ export class ListView extends React.Component<IListViewProps, IListViewState> {
   public render(): React.ReactElement<IListViewProps> {
     let groupProps: IGroupRenderProps = {};
 
-    let { showFilter, filterPlaceHolder, dragDropFiles, stickyHeader, selectionMode, compact } = this.props;
+    let { showFilter, filterPlaceHolder, dragDropFiles, stickyHeader, selectionMode, compact, defaultCollapse } = this.props;
     let { filterValue, items, dragStatus, columns, groups } = this.state;
 
     // Check if selection mode is single selection,
@@ -592,7 +592,8 @@ export class ListView extends React.Component<IListViewProps, IListViewState> {
         headerProps: {
           onToggleSelectGroup: () => null,
           onGroupHeaderClick: () => null,
-        }
+        },
+        isAllGroupsCollapsed: !!defaultCollapse
       };
     }
 
