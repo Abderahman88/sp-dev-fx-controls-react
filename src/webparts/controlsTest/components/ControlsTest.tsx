@@ -1122,7 +1122,8 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
                   hidden={!this.state.iFrameDialogOpened}
                   onDismiss={() => { this.setState({ iFrameDialogOpened: false }); }}
                   modalProps={{
-                    isBlocking: true
+                    isBlocking: true,
+                    styles: { main: { backgroundColor: 'red'} },
                   }}
                   dialogContentProps={{
                     type: DialogType.close,
