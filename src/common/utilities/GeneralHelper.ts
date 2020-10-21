@@ -284,6 +284,18 @@ export class GeneralHelper {
       return fileNameWithExtension;
     }
 
+     /**
+     * Returns human readable file size
+     */
+    public static convertFileSize(fs : number) {
+        var u = 0, s=1024;
+        while (fs >= s || -fs >= s) {
+            fs /= s;
+            u++;
+        }
+        return (u ? fs.toFixed(1) + ' ' : fs) + ' KMGTPEZY'[u] + 'B';
+    }
+
     public static isImage(fileName: string): boolean {
       const acceptableExtensions: string[] = IMG_SUPPORTED_EXTENSIONS.split(",");
       // const IMG_SUPPORTED_EXTENSIONS = ".gif,.jpg,.jpeg,.bmp,.dib,.tif,.tiff,.ico,.png,.jxr,.svg"

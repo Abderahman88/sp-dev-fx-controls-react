@@ -22,6 +22,7 @@ export default class UploadFilePickerTab extends React.Component<IUploadFilePick
   public render(): React.ReactElement<IUploadFilePickerTabProps> {
     const { filePickerResult, filePreview } = this.state;
     const fileName: string = filePickerResult ? filePickerResult.fileName : null;
+    const fileSize: string = filePickerResult ? GeneralHelper.convertFileSize(filePickerResult.fileSize) : null;
     const acceptedFilesExtensions = this.props.accepts ? this.props.accepts.join(",") : null;
 
     return (
@@ -41,12 +42,14 @@ export default class UploadFilePickerTab extends React.Component<IUploadFilePick
             <div className={styles.localTabSinglePreview}>
                 <img className={styles.localTabSinglePreviewImage} src={filePreview} alt={filePickerResult.fileName} />
                 <span>{fileName}</span>
+                {fileSize && <span> ({fileSize})</span>}
             </div>
           }
           <div>
             <label className={styles.localTabFilename}>{
               (!filePreview && fileName ? fileName : "")
             }</label>
+            {!filePreview && fileSize && <span> ({fileSize})</span>}
           </div>
           <label className={styles.localTabLabel} htmlFor="fileInput">{
             (fileName ? strings.ChangeFileLinkLabel : strings.ChooseFileLinkLabel)
@@ -77,10 +80,10 @@ export default class UploadFilePickerTab extends React.Component<IUploadFilePick
 
     // Grab the first file -- there should always only be one
     const file: File = files[0];
-
     const filePickerResult: IFilePickerResult = {
       fileAbsoluteUrl: null,
       fileName: file.name,
+      fileSize: file.size,
       fileNameWithoutExtension: GeneralHelper.getFileNameWithoutExtension(file.name),
       downloadFileContent: () => { return Promise.resolve(file); }
     };

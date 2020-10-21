@@ -647,7 +647,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
 
     return (
       <div className={styles.controlsTest}>
-        <WebPartTitle displayMode={this.props.displayMode}
+        {/*<WebPartTitle displayMode={this.props.displayMode}
           title={this.props.title}
           updateProperty={this.props.updateProperty}
           moreLink={
@@ -842,7 +842,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
           value={new Date()}
           onChange={(value) => console.log("DateTimePicker value:", value)}
           minDate={new Date("05/01/2019")}
-          maxDate={new Date("05/01/2020")} />
+          maxDate={new Date("05/01/2020")} />*/}
 
         {/* <RichText isEditMode={this.props.displayMode === DisplayMode.Edit} onChange={value => { this.richTextValue = value; return value; }} /> */}
         <RichText isEditMode={this.props.displayMode === DisplayMode.Edit} onChange={value => { this.setState({ richTextValue: value }); return value; }} />
@@ -852,7 +852,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
           context={this.props.context}
           disabled={false} /> */}
 
-        <Placeholder iconName='Edit'
+        {/*<Placeholder iconName='Edit'
           iconText='Configure your web part'
           description='Please configure the web part.'
           buttonLabel='Configure'
@@ -1263,7 +1263,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
 
         <div className={styles.siteBreadcrumb}>
           <SiteBreadcrumb context={this.props.context} />
-        </div>
+        </div>*/}
 
         <div>
           <FilePicker
@@ -1284,7 +1284,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
           }
         </div>
 
-        <p><a href="javascript:;" onClick={this.deleteItem}>Deletes second item</a></p>
+        {/*<p><a href="javascript:;" onClick={this.deleteItem}>Deletes second item</a></p>
         <div>
           <Progress title={'Progress Test'}
             showOverallProgress={true}
@@ -1372,7 +1372,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
             ]}
             value={this.getRandomCollectionFieldData()}
           />
-        </div>
+          </div>*/}
       </div>
     );
   }

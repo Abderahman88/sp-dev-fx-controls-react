@@ -41,4 +41,9 @@ export interface IFilePickerResult {
    * Downloads file picker result content.
    */
   downloadFileContent: () => Promise<File>;
+
+  /**
+   * Selected file size.
+   */
+  fileSize?: number;
 }
