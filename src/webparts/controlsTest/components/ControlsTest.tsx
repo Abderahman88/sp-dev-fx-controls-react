@@ -306,7 +306,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
       selectedList: null,
       progressActions: this._initProgressActions(),
       dateTimeValue: new Date(),
-      richTextValue: null,
+      richTextValue: "Dit kan ook",
       canMovePrev: false,
       canMoveNext: true,
       currentCarouselElement: this.carouselElements[0],
@@ -647,7 +647,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
 
     return (
       <div className={styles.controlsTest}>
-        <WebPartTitle displayMode={this.props.displayMode}
+        {/*<WebPartTitle displayMode={this.props.displayMode}
           title={this.props.title}
           updateProperty={this.props.updateProperty}
           moreLink={
@@ -842,17 +842,17 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
           value={new Date()}
           onChange={(value) => console.log("DateTimePicker value:", value)}
           minDate={new Date("05/01/2019")}
-          maxDate={new Date("05/01/2020")} />
+          maxDate={new Date("05/01/2020")} />*/}
 
         {/* <RichText isEditMode={this.props.displayMode === DisplayMode.Edit} onChange={value => { this.richTextValue = value; return value; }} /> */}
-        <RichText isEditMode={this.props.displayMode === DisplayMode.Edit} onChange={value => { this.setState({ richTextValue: value }); return value; }} />
+        <RichText isEditMode={this.props.displayMode === DisplayMode.Edit} onChange={value => { this.setState({ richTextValue: value }); return value; }} value={"Zeker"}/>
 
         {/* <ListItemAttachments listId='0ffa51d7-4ad1-4f04-8cfe-98209905d6da'
           itemId={1}
           context={this.props.context}
           disabled={false} /> */}
 
-        <Placeholder iconName='Edit'
+        {/*<Placeholder iconName='Edit'
           iconText='Configure your web part'
           description='Please configure the web part.'
           buttonLabel='Configure'
@@ -1372,7 +1372,7 @@ export default class ControlsTest extends React.Component<IControlsTestProps, IC
             ]}
             value={this.getRandomCollectionFieldData()}
           />
-        </div>
+          </div>*/}
       </div>
     );
   }
